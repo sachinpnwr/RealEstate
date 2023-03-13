@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Yantramanav', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --blue: #02163c;
+    --grey: #a7a7a7;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3vw;
+    height: calc(40px + 14px);
+    z-index: 100;
+    transition: all .5s ease-in;
+}
+
+nav.scrolling-active {
+    background: var(--blue);
+    transition: all .5s ease-in;
+}
+
+.logo img {
+    height: 30px;
+}
+
+#navItems ul {
+    list-style-type: none;
+    display: flex;
+}
+
+#navItems ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    margin-left: 2vw;
+    font-size: 14px;
+    transition: all .5s ease;
+}
+
+#navItems ul li a:hover {
+    color: violet;
+    transition: all .5s ease;
+
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.bar {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: white;
+    margin: 4px;
+    transition: all .5s ease-in-out;
+}
+
+.close {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    /* top: -54px; */
+    /* bottom: -54px; */
+    width: 100%;
+    height: 100vh;
+    max-height: 1000px;
+    /* min-height: 100px; */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide img {
+    height: 100vh;
+    max-height: 1000px;
+    width: 100vw;
+    /* min-height: 100px; */
+    /* object-fit: cover; */
+}
+
+.slide-content {
+    position: absolute;
+    z-index: 50;
+    top: calc(50% - 54px);
+    width: 100%;
+    display: flex;
+    padding-right: 10vw;
+    justify-content: end;
+    text-align: end;
+}
+
+.slide-content p {
+    font-size: 25px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white;
+    text-align: end;
+    text-shadow: 1px 1px 2px black;
+    /* color: var(--blue); */
+}
+
+.slide-content p span {
+    padding: 5px;
+    /* line-height: 29px; */
+    font-weight: bold;
+    background: var(--blue);
+    border-radius: 3px;
+    color: white;
+}
+
+.control-btn {
+    position: absolute;
+    /* top: calc(50% - 14px); */
+    top: 0;
+    height: 100%;
+    max-height: 1000px;
+    /* min-height: 500px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.control-btn:focus {
+    border: none;
+}
+
+.prev-btn,
+.next-btn {
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 40px;
+    color: #222;
+}
+
+section:not(:nth-child(1)) {
+    padding: 60px 5vw 40px;
+
+}
+
+#about {
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.about-content {
+    width: 45%;
+}
+
+p {
+    color: #555;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.hidden {
+    display: none;
+}
+
+.expand {
+    margin-top: 15px;
+    cursor: pointer;
+    width: 90px;
+}
+
+.expand i {
+    font-size: 10px;
+}
+
+.about-img {
+    width: 45%;
+}
+
+.about-img img {
+    width: 100%;
+}
+
+h2 {
+    font-size: 40px;
+    color: var(--blue);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+hr {
+    width: 500px;
+    height: 3px;
+    margin: auto;
+    background: var(--blue);
+    color: var(--blue);
+    border: none;
+}
+
+.spec-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spec-box {
+    margin: 10px auto;
+    border: 0.5px solid var(--blue);
+    transition: all .2s ease-in;
+    padding: 10px;
+    min-height: 350px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spec-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: start; */
+    text-align: justify;
+    width: 20vw;
+    height: fit-content;
+}
+
+.spec-content i {
+    text-align: center;
+}
+
+.spec-box:hover {
+    box-shadow: 3px 3px 10px -4px var(--blue);
+    ;
+    transition: all .2s ease-in;
+}
+
+.spec-box i {
+    font-size: 55px;
+}
+
+.spec-box h4 {
+    margin-top: 15px;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.spec-box hr {
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+.spec-box .expand {
+    text-align: start;
+}
+
+.spec-box .expand i {
+    font-size: 10px;
+}
+
+#masterPlan {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 5vw 0;
+}
+
+#masterPlan img {
+    width: 100%;
+    margin: auto;
+}
+
+#location {
+    /* min-height: 620px; */
+    background-color: var(--grey);
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#map iframe {
+    height: 80vh;
+    width: 50vw;
+}
+
+.map-details {
+    min-height: 90vh;
+    height: fit-content;
+    width: 40vw;
+    background: white;
+    padding: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.map-details h3 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+}
+
+.map-details h4 {
+    width: fit-content;
+    display: block;
+    font-size: 22px;
+    border-bottom: 2px solid var(--blue);
+}
+
+.map-details p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#contactUs {
+    background: #0d234c;
+    color: white;
+    /* padding: 5vh 5vw; */
+}
+
+#columns {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 100%;
+}
+
+#columns h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 2px solid violet;
+    width: fit-content;
+    text-align: center;
+    align-items: center;
+}
+
+#contact-details {
+
+    width: fit-content;
+}
+
+#contact-details p {
+    color: white;
+    /* text-align: center; */
+}
+
+#contact-details .logo img {
+    margin-top: 15px;
+    width: 250px;
+    height: 115px;
+}
+
+#navItems-2 {
+    margin: 15px 0;
+}
+
+#navItems-2 li {
+    margin: 5px 0;
+    list-style-type: none;
+}
+
+#navItems-2 li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: all .5s ease;
+}
+
+#navItems-2 li a:hover {
+    color: violet;
+    transition: all .5s ease;
+}
+
+.media-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.media-icons i:hover {
+    color: violet;
+    transition: all 1s ease;
+}
+
+#column-3 {
+    width: 30vw;
+}
+
+#column-3 form {
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+#column-3 form input:focus,#column-3 form textarea:focus {
+    border: none;
+    box-shadow: 0 0 3px violet;
+    outline-offset: 0px;
+    outline: none;
+    /* background-color: #0d234c; */
+}
+
+#column-3 form input[type="text"],
+#column-3 form input[type="email"] {
+    width: 49.5%;
+    height: 30px;
+    margin-top: 1px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+#column-3 form input[type="tel"] {
+    padding: 5px;
+    width: 100%;
+    margin-top: 2px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#column-3 form textarea {
+    margin-top: 2px;
+    padding: 5px;
+    width: 100%;
+    font-size: 15px;
+    resize: vertical;
+}
+
+.outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    /* border: 1px solid black; */
+    border-radius: 3px;
+    width: 100px;
+    height: 40px;
+    display: block;
+    background: linear-gradient(to right, white 50%, violet 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-position: left bottom;
+}
+
+.text {
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+    color: white;
+    transition: all .6s ease-out;
+    display: block;
+}
+
+.text:hover {
+    color: black;
+}
+
+footer{
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+footer p{
+    color: black;
+    font-weight: bolder;
+    margin-top: 1vh;
+}
+footer p span{
+    /* color: var(--blue); */
+    color: violet;
+    font-weight: bolder
+}
