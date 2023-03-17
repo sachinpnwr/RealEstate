@@ -110,13 +110,10 @@ function nextSlide(){
     var d = new Date();
         var t = d.getTime();
         if(t - lastClick < 700) {
-            //  alert("LESS THAN 5 SECONDS!!!");
-            // console.log('off')
             return;
         }
         else{
             moveToNextSlide();
-            // console.log('on')
         }
         lastClick = t;
 }
@@ -140,19 +137,7 @@ let expand = document.querySelectorAll('.expand');
 let hidden = document.querySelectorAll('.hidden');
 const close1 = `Close <i class="fa-solid fa-angles-up"></i>`;
 const more =`Read More <i class="fa-solid fa-angles-down"></i>`
-// expand.addEventListener('click',()=>{
-//     let expand = document.querySelectorAll('.expand')[bulletIndex];
-//     if(expand.innerHTML === close1){
-//         hidden.style.display = `none`;
-//         hidden.style.transition = '.7s';
-//         expand.innerHTML= more;
-//     }
-//     else{
-//         hidden.style.display = `block`;
-//         expand.innerHTML= close1;
-//         hidden.style.transition = '.7s';
-//     }
-// })
+
 expand.forEach((bullet , bulletIndex)=>{
     bullet.addEventListener('click',()=>{
     let expand = document.querySelectorAll('.expand');
