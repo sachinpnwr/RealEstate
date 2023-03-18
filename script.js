@@ -153,3 +153,59 @@ expand.forEach((bullet , bulletIndex)=>{
     }
     })
 })
+
+// amenites slider
+
+const swiperEl = document.querySelector('.swiper1')
+Object.assign(swiperEl, {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    speed:1200,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    loop: true,
+    breakpoints: {
+        500:{
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        765: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+        },
+        990: {
+            slidesPerView: 6,
+            spaceBetween: 40,
+        },
+    },
+});
+swiperEl.initialize();
+const swiperEl2 = document.querySelector('.swiper2')
+Object.assign(swiperEl2, {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    speed:1200,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    loop: true,
+    breakpoints: {
+        500:{
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        765: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+        },
+        990: {
+            slidesPerView: 6,
+            spaceBetween: 40,
+        },
+    },
+});
+
+swiperEl2.initialize();
